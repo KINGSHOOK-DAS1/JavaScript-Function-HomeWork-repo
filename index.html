@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //normal function 
+        console.log(" Normal function 1");
+        
+        function hello(){
+            return "Hello";
+        }
+        console.log(hello());
+        
+        console.log(" Normal function 2");
+
+        function hi(){
+            return "Hi";
+        }
+        console.log(hi());
+        
+        console.log(" Normal function 3");
+
+        function add(a ,b){
+            return a + b;
+        }
+        console.log(add(26,4));
+        
+        console.log(" Normal function 4");
+
+        function subtract(a ,b){
+            return a - b;
+        }
+        console.log(subtract(24,2));
+        
+
+
+        //we using conditional or ternary operator
+        console.log(" Conditional or ternary operator 1");
+        function greater(a,b){
+            return a > b ? a : b;
+        }
+        console.log(greater(8,6));
+
+        console.log(" Conditional or ternary operator 2");
+        function smaller(a,b){
+            return a < b ? a : b;
+        }
+        console.log(smaller(8,6));
+        
+
+        //fat arrow function
+        console.log(" Fat arrow function 1");
+        
+        const hello2 = () => {
+            return "Hello";
+        }
+        console.log(hello2());
+
+        console.log(" Fat arrow function 2");
+        
+        const greater2 = (a,b) => {
+            return a > b ? a : b;
+        }
+        console.log(greater(45,32));
+
+        console.log(" Fat arrow function 3");
+        
+        const factorial = () => {
+            let multi=1;
+            for(let i = 1; i <= 5; i++){
+                multi *= i;
+            }
+            return multi;
+        }
+        console.log(factorial());
+
+
+        console.log(" Fat arrow function 4");
+        
+        const CountVowels = (str) => {
+            let vowels = "aeiou";
+            let count = 0;
+            for(let char of str.toLowerCase())
+        {
+            if(vowels.includes(char)){
+                count++;
+            }
+        }
+        return count;
+        }
+        console.log(CountVowels("Kingshook"));
+        
+        
+        //(Q2)creating fat arrow function for finding number of consonants in an string
+        console.log("Creating function for finding number of consonants in an string");
+        
+        const CountConsonants = (s) => {
+            let count = 0;
+            let consonants = "b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,y,z";
+            for(let char of s.toLowerCase()){
+                if(consonants.includes(char)){
+                    count++;
+                }
+            }
+            return count;
+        }
+        console.log(CountConsonants("Kingshook"));
+
+        // let name = "Kingshook";
+        // console.log(name.length());
+
+
+
+        // (Q3)arr=[1,2,3,4,5] map function double
+        console.log(" Creating function for mapping a array ");
+        
+        let arr = [1,2,3,4,5];
+        function MapDouble(){
+            const mappingDouble=arr.map( n => n*n);
+            return mappingDouble;
+        }
+        console.log(MapDouble());
+
+        // (Q4)filter function 50
+        console.log(" Creating function for filtering a array ");
+        
+        let arr2 = [15,25,45,56,78,48,95,86,63,71];
+        function FilterGreaterFifty(){
+            const FilteringGreaterFifty=arr2.filter( n => n>50);
+            return FilteringGreaterFifty;
+        }
+        console.log(FilterGreaterFifty());
+
+        // (Q5)reduce sum multiply divide
+        console.log(" Creating function for reducing a array for sum ");
+        function reducingSum(){
+            const SumReduce=arr.reduce((acc,val) => acc+val,0);
+            return SumReduce;
+        }
+        console.log(reducingSum());
+
+        console.log(" Creating function for reducing a array for multiply ");
+        function reducingMultiply(){
+            const MultiReduce = arr.reduce((acc,val) => acc*val,1);
+            return MultiReduce;
+        }
+        console.log(reducingMultiply());
+
+        // map filter reduce
+       // double value, filter even, sum them all
+       console.log(" Creating function for mapping , filtering and reducing a array ");
+
+       function MapFilterReduce(){
+        const MappingFilteringReducing = arr2.map( n => n*n ).filter( n => n%2===0 ).reduce((acc,val) => acc+val,0);
+        return MappingFilteringReducing;
+       }
+       console.log(MapFilterReduce());
+
+    </script>
+</body>
+</html>
